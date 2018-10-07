@@ -5,14 +5,14 @@ const MEM_SIZE: usize = 4096;
 const PROGRAM_START: usize = 0x200;
 
 pub struct Chip8 {
-    cpu: cpu::Cpu,
     ram: ram::Ram,
+    cpu: cpu::Cpu,
 }
 
 pub fn new() -> Chip8 {
     Chip8 {
-        cpu: cpu::new(),
         ram: ram::new(),
+        cpu: cpu::new(),
     }
 }
 

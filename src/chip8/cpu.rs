@@ -5,7 +5,7 @@ pub struct Cpu {
     sp: u8,
     i: u16,
     dr: u8,
-    sr: u8
+    sr: u8,
 }
 
 pub fn new() -> Cpu {
@@ -16,16 +16,20 @@ pub fn new() -> Cpu {
         pc: 0,
         sp: 0,
         dr: 0,
-        sr: 0
+        sr: 0,
     }
 }
 
 impl Cpu {
     pub fn reset(&mut self) {
         // clear regs
-        for elem in self.regs.iter_mut() { *elem = 0 }
+        for elem in self.regs.iter_mut() {
+            *elem = 0
+        }
         // clear stack
-        for elem in self.stack.iter_mut() { *elem = 0 }
+        for elem in self.stack.iter_mut() {
+            *elem = 0
+        }
 
         self.pc = 0;
         self.sp = 0;
