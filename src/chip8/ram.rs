@@ -54,6 +54,10 @@ impl Ram {
         Ok(())
     }
 
+    pub fn read_mem(&self, i: usize) -> u16 {
+        (self.mem[i] as u16) << 8 | self.mem[i + 1] as u16
+    }
+
     // private
 
     fn init_char_sprites(&mut self) {
