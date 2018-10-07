@@ -6,8 +6,8 @@ pub struct Cpu {
     pc: u16,
     sp: u8,
     i: u16,
-    dr: u8,
-    sr: u8,
+    dt: u8,
+    st: u8,
 }
 
 pub fn new() -> Cpu {
@@ -17,8 +17,8 @@ pub fn new() -> Cpu {
         i: 0,
         pc: 0,
         sp: 0,
-        dr: 0,
-        sr: 0,
+        dt: 0,
+        st: 0,
     }
 }
 
@@ -36,8 +36,8 @@ impl Cpu {
         self.pc = ::chip8::PROGRAM_START as u16;
         self.sp = 0;
         self.i = 0;
-        self.dr = 0;
-        self.sr = 0;
+        self.dt = 0;
+        self.st = 0;
     }
 
     pub fn step(&mut self, mem: &ram::Ram) {
