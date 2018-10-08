@@ -1,5 +1,6 @@
 mod cpu;
 mod ram;
+mod utils;
 
 const MEM_SIZE: usize = 4096;
 const PROGRAM_START: usize = 0x200;
