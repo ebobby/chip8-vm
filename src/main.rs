@@ -5,7 +5,7 @@ fn main() -> std::io::Result<()> {
 
     vm.reset();
     vm.load_rom(String::from("SCTEST.ch8"))?;
-    vm.dump_mem();
+    vm.run_test();
 
     Ok(())
 }

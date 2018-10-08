@@ -30,4 +30,8 @@ impl Chip8 {
     pub fn load_rom(&mut self, path: String) -> ::std::io::Result<()> {
         self.ram.load_rom(path)
     }
+
+    pub fn run_test(&mut self) {
+        self.cpu.run_test(&self.ram);
+    }
 }

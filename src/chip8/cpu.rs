@@ -35,9 +35,18 @@ impl Cpu {
         self.i = 0;
     }
 
-    pub fn step(&mut self, mem: &ram::Ram) {
-        let inst = self.fetch(mem);
-        let _op = self.decode(inst);
+    pub fn run_test(&mut self, mem: &ram::Ram) {
+        let mut ops= Vec::new();
+
+        for _i in 0..1024 {
+            let fetched = self.fetch(mem);
+            let decoded = self.decode(fetched);
+
+            ops.push(decoded);
+        }
+
+        println!("Decoded instructions: ");
+        println!("{:#?}", ops);
     }
 
     // private
